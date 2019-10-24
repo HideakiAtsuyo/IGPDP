@@ -4,7 +4,7 @@ request<br>snekfetch<br>download-file<br>chalk
 
 # Installation des modules
 
-npm i --save "module"<br><br>npm i --save kahoot.js-updated<br>npm i --save colors
+npm i --save "module"<br><br>npm i --save request<br>npm i --save snekfetch<br>npm i --save download-file<br>npm i --save chalk
 
 # Vidéo
 
