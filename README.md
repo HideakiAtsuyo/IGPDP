@@ -10,7 +10,10 @@ Tout installer en même temps:<br>npm i<br><br>ou<br><br>Installation 1 par 1:<b
 
 [ICI](https://www.youtube.com/watch?v=xmK_pczZUFc)
 
+# Options
+
+-P ou --picture :<br>Télécharger une photo de profile<br>-I ou --infos :<br>pour obtenir les informations d'un profile
+  
 # Utilisation
 
-node igpdp.js "pseudo"<br>Exemple:<br>node igpdp.js ahbahjesuisfou
-
+node igpdp.js "option" "pseudo"<br>Exemple:<br>node igpdp.js -P ahbahjesuisfou
