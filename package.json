@@ -4,16 +4,18 @@
   "description": "",
   "main": "igpdp.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node igpdp.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dany-LF/IGPDP/"
+    "url": "https://github.com/Dany-LF/IGPDP"
   },
   "author": "Dany-LF",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
-    "download-file": "^0.1.5"
+    "download-file": "^0.1.5",
+    "request": "^2.88.0",
+    "snekfetch": "^4.0.4"
   }
 }
