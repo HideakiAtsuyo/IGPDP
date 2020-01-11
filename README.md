@@ -8,7 +8,7 @@ Tout installer en même temps:<br>npm i<br><br>ou<br><br>Installation 1 par 1:<b
 
 # Vidéo
 
-[ICI](https://www.youtube.com/watch?v=xmK_pczZUFc)
+[ICI](https://www.youtube.com/watch?v=xmK_pczZUFc) (OUTDATED)
 
 # Options
 
