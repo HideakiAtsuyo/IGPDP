@@ -38,12 +38,11 @@ if(opt == "-P" || opt == "--picture"){
 	cl();
 	var r6 = snekfetch['get']('https://www.instagram.com/' + p + '?__a=1');
 	r6.send().then(r => {
-		if(`${r.body.graphql.user.is_private}` == true){
-			var pv = "Oui";
-		} else {
-			var pv = "Non";
-		}
-		console.log(chalk.red.bold(`Nom: ${r.body.graphql.user.username} || ID: ${r.body.graphql.user.id}\nSurnom: ${r.body.graphql.user.full_name||"Aucun surnom"}\nDescription: \"${r.body.graphql.user.biography||"Aucune biographie"}\"\nAbonnés: ${r.body.graphql.user.edge_followed_by.count}\nAbonnements: ${r.body.graphql.user.edge_follow.count}\nPhotos&Vidéos: ${r.body.graphql.user.edge_owner_to_timeline_media.count}\nPrivé: ${pv}\n\nLien Photo de profile: \n${r.body.graphql.user.profile_pic_url_hd}`));
+		if(`${r.body.graphql.user.is_private}` == true){var pv = "Oui";} else {var pv = "Non";}
+		if(`${r.body.graphql.user.is_verified}` == true){var verif = "Oui";} else {var verif = "Non";}
+		if(`${r.body.graphql.user.is_joined_recently}` == true){var rcc = "Oui";} else {var rcc = "Non";}
+		if(`${r.body.graphql.user.is_business_account}` == true){var vbus = "Oui";} else {var vbus = "Non";}
+		console.log(chalk.red.bold(`Nom: ${r.body.graphql.user.username} || ID: ${r.body.graphql.user.id}\nSurnom: ${r.body.graphql.user.full_name||"Aucun surnom"}\nDescription: \"${r.body.graphql.user.biography||"Aucune biographie"}\"\nAbonnés: ${r.body.graphql.user.edge_followed_by.count}\nAbonnements: ${r.body.graphql.user.edge_follow.count}\nPhotos&Vidéos: ${r.body.graphql.user.edge_owner_to_timeline_media.count}\nPrivé: ${pv} || Vérifié: ${verif}\nRejoint récemment: ${rrc} || Compte Business: ${vbus}`));
 		setTimeout(stop, 2000, 'Fin');
 	});
 } else {
