@@ -17,3 +17,7 @@ Tout installer en même temps:<br>npm i<br><br>ou<br><br>Installation 1 par 1:<b
 # Utilisation
 
 node igpdp.js "option" "pseudo"<br>Exemple:<br>node igpdp.js -P ahbahjesuisfou
+
+# Erreur
+
+Si il y a une erreur veuillez ouvrir une demande [ICI](https://github.com/Dany-LF/IGPDP/issues)
