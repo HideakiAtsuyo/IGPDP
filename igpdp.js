@@ -8,12 +8,15 @@ const chalk = require('chalk');
 
 /////DES IF INUTILES CAR JE SUPPOSE QU'ON PEUT LE SIMPLIFIER/////
 /////////////////////////////////////////////////////////////////
+/*
 if(process.argv.length <= 2) {
 	utilisation()
 }
 if(process.argv.length <= 3) {
 	utilisation()	
 }
+*/
+verif();
 /////////////////////////////////////////////////////////////////
 
 /////VARIABLES/////
@@ -53,7 +56,7 @@ if(opt == "-P" || opt == "--picture"){
 
 /////FONCTIONS/////
 ///////////////////
-function utilisation(){
+function verif(){
 if(process.argv.length <= 2) {
 console.log(chalk.red.underline("Vous n'avez pas précisé d'option!\n\nUtilisation: node igpdp.js <option> <pseudo>\nExemple:\nnode igpdp.js -P ahbahjesuisfou\n\n=====Options:=====\n-P ou --picture pour télécharger une photo de profile\n-I ou --infos pour obtenir les informations d'un profile\n==================\n\nSi il y a un bug merci d'ouvrir une issue ici: https://github.com/Dany-LF/IGPDP/issues"));
 stop();
@@ -61,6 +64,10 @@ stop();
 console.log(chalk.red.underline("Vous n'avez pas précisé de pseudo!\n\nUtilisation: node igpdp.js <option> <pseudo>\nExemple:\nnode igpdp.js -P ahbahjesuisfou\n\n=====Options:=====\n-P ou --picture pour télécharger une photo de profile\n-I ou --infos pour obtenir les informations d'un profile\n==================\n\nSi il y a un bug merci d'ouvrir une issue ici: https://github.com/Dany-LF/IGPDP/issues"));
 stop();
 }
+}
+function utilisation(){
+console.log(chalk.red.underline("Utilisation: node igpdp.js <option> <pseudo>\nExemple:\nnode igpdp.js -P ahbahjesuisfou\n\n=====Options:=====\n-P ou --picture pour télécharger une photo de profile\n-I ou --infos pour obtenir les informations d'un profile\n==================\n\nSi il y a un bug merci d'ouvrir une issue ici: https://github.com/Dany-LF/IGPDP/issues"));
+stop();
 }
 function stop(){
 	process.exit(-1);
