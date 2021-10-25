@@ -1,28 +1,37 @@
-A rewrite will be done in a few days
+# Dependencies
+
+There are a few dependencies for this project :
+- ``snekfetch``,
+- ``download-file``,
+- ``chalk``
 
 
+# Setup
 
+```bash
+npm i --save # Will install all the dependencies from the package.json file.
+```
 
-# Modules
+# Showcase
 
-request<br>snekfetch<br>download-file<br>chalk
-
-# Installation des modules
-
-Tout installer en même temps:<br>npm i<br><br>ou<br><br>Installation 1 par 1:<br>npm i --save "module"<br><br>npm i --save request<br>npm i --save snekfetch<br>npm i --save download-file<br>npm i --save chalk
-
-# Vidéo
-
-[ICI](https://www.youtube.com/watch?v=xmK_pczZUFc) (OUTDATED)
+[YouTube](https://www.youtube.com/watch?v=xmK_pczZUFc) (OUTDATED)
 
 # Options
 
--P ou --picture :<br>Télécharger une photo de profile<br>-I ou --infos :<br>pour obtenir les informations d'un profile
-  
+-P ou --picture | to download the profile's avatar
+-I ou --infos | to gather the profile's information
+
 # Utilisation
 
-node igpdp.js "option" "pseudo"<br>Exemple:<br>node igpdp.js -P ahbahjesuisfou
+```bash
+node src/index.js <option> <username>
+```
 
-# Erreur
+Exemple:
+```bash
+node src/index.js -P ahbahjesuisfou
+```
 
-Si il y a une erreur veuillez ouvrir une demande [ICI](https://github.com/HideakiAtsuyo/IGPDP/issues)
+# Issues
+
+If you're facing an issue, please, open a ticket [here](https://github.com/HideakiAtsuyo/IGPDP/issues).
