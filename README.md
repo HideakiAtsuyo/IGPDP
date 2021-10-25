@@ -18,8 +18,8 @@ npm i --save # Will install all the dependencies from the package.json file.
 
 # Options
 
--P ou --picture | to download the profile's avatar
--I ou --infos | to gather the profile's information
+-P or --picture | to download the profile's avatar<br>
+-I or --infos | to gather the profile's information
 
 # Utilisation
 
@@ -27,7 +27,7 @@ npm i --save # Will install all the dependencies from the package.json file.
 node src/index.js <option> <username>
 ```
 
-Exemple:
+Example:
 ```bash
 node src/index.js -P ahbahjesuisfou
 ```
