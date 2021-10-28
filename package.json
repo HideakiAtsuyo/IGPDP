@@ -13,8 +13,6 @@
   "author": "HideakiAtsuyo",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "download-file": "^0.1.5",
-    "snekfetch": "^4.0.4"
+    "chalk": "^2.4.2"
   }
 }
