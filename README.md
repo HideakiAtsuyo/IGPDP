@@ -1,10 +1,6 @@
 # Dependencies
 
-There are a few dependencies for this project :
-- ``snekfetch``,
-- ``download-file``,
-- ``chalk``
-
+This project requires the ``chalk`` module to display beautiful text on the console.
 
 # Setup
 
@@ -18,8 +14,9 @@ npm i --save # Will install all the dependencies from the package.json file.
 
 # Options
 
--P ou --picture | to download the profile's avatar
--I ou --infos | to gather the profile's information
+-P or --picture | to download the profile's avatar
+
+-I or --infos | to gather the profile's information
 
 # Utilisation
 
