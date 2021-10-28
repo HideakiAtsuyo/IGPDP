@@ -1,41 +1,41 @@
 const {
-        argsChecker,
-        usage,
-        getUserData,
-        exit,
-        prettyPrinter,
-        downloadProfilePicture,
-    } = require('./functions')
+    argsChecker,
+    usage,
+    getUserData,
+    exit,
+    prettyPrinter,
+    downloadProfilePicture,
+} = require('./functions');
 
 async function main() {
-    if (!argsChecker()) return null
+    if (!argsChecker()) return null;
 
     const opt = process.argv[2],
         p = process.argv[3],
-        user = await getUserData(p)
+        user = await getUserData(p);
 
-    console.clear()
+    console.clear();
 
     if (['-P', '--picture'].includes(opt)) {
         const avatarURL = user.profile_pic_url_hd,
-            output = `${user.username}_${user.id}.jpg`
+            output = `${user.username}_${user.id}.jpg`;
 
         try {
-            await downloadProfilePicture(avatarURL, output)
+            await downloadProfilePicture(avatarURL, output);
             prettyPrinter(
                 `The ${user.username}'s avatar has been downloaded at ${filename}!`,
                 'blue',
                 'italic'
-            )
-            setTimeout(exit, 2000, 'End')
+            );
+            setTimeout(exit, 2000, 'End');
         } catch (e) {
-            throw e
+            throw e;
         }
     } else if (['-I', '--infos'].includes(opt)) {
         const is_private = user.is_private ? 'Yes' : 'No',
             is_verified = user.is_verified ? 'Yes' : 'No',
             is_joined_recently = user.is_joined_recently ? 'Yes' : 'No',
-            is_business_account = user.is_business_account ? 'Yes' : 'No'
+            is_business_account = user.is_business_account ? 'Yes' : 'No';
 
         prettyPrinter(
             `Username: ${user.username} || ID: ${user.id}\nFull name: ${
@@ -49,11 +49,11 @@ async function main() {
             }\nIs private: ${is_private} || Is verified: ${is_verified}\nRecently joined: ${is_joined_recently} || Is a business account: ${is_business_account}`,
             'red',
             'bold'
-        )
-        setTimeout(exit, 2000, 'End')
+        );
+        setTimeout(exit, 2000, 'End');
     } else {
-        usage()
+        usage();
     }
 }
 
-main()
+main();

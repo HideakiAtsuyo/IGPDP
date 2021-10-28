@@ -1,6 +1,6 @@
 const https = require('https'),
     chalk = require('chalk').default,
-    fs = require('fs')
+    fs = require('fs');
 
 /**
  *
@@ -15,29 +15,29 @@ function httpGet(
     }
 ) {
     return new Promise(function (resolve, reject) {
-        const data = []
+        const data = [];
         return https
             .get(url, { headers }, function (response) {
                 response.on('data', function (chunk) {
-                    data.push(chunk)
-                })
+                    data.push(chunk);
+                });
 
                 response.once('end', function () {
-                    const rawData = Buffer.concat(data).toString()
+                    const rawData = Buffer.concat(data).toString();
                     return resolve({
                         text: rawData,
                         json: (function () {
                             try {
-                                return JSON.parse(rawData)
+                                return JSON.parse(rawData);
                             } catch (_) {
-                                return null
+                                return null;
                             }
                         })(),
-                    })
-                })
+                    });
+                });
             })
-            .on('error', reject)
-    })
+            .on('error', reject);
+    });
 }
 
 /**
@@ -47,18 +47,22 @@ function httpGet(
  * @param {string} decoration The text decoration : bold, italic, etc...
  */
 function prettyPrinter(text, color, decoration) {
-    return console.log(chalk[color][decoration](text))
+    return console.log(chalk[color][decoration](text));
 }
 
 function argsChecker() {
-    if (process.argv.length === 4) return true
+    if (process.argv.length === 4) return true;
     if (process.argv.length <= 2) {
-        prettyPrinter('The option is missing!\n', 'red', 'underline')
+        prettyPrinter('The option is missing!\n', 'red', 'underline');
     } else if (process.argv.length <= 3) {
-        prettyPrinter("The account's surname is missing!\n", 'red', 'underline')
+        prettyPrinter(
+            "The account's surname is missing!\n",
+            'red',
+            'underline'
+        );
     }
-    usage()
-    return false
+    usage();
+    return false;
 }
 
 /**
@@ -70,10 +74,10 @@ function downloadProfilePicture(url, output) {
     return new Promise(function (resolve, reject) {
         https
             .get(url, function (data) {
-                data.pipe(fs.createWriteStream(output)).on('close', resolve)
+                data.pipe(fs.createWriteStream(output)).on('close', resolve);
             })
-            .on('error', reject)
-    })
+            .on('error', reject);
+    });
 }
 
 function usage() {
@@ -89,24 +93,22 @@ node ${process.argv[1]} -P hideakiatsuyo
 ==================
 
 If you're facing an issue, please, open a ticket: https://github.com/HideakiAtsuyo/IGPDP/issues`)
-    )
+    );
 }
 
 async function getUserData(username) {
     try {
         const userData = (
-            await httpGet(
-                `https://www.instagram.com/${username}?__a=1`
-            )
-        ).json
-        return userData.graphql.user
+            await httpGet(`https://www.instagram.com/${username}?__a=1`)
+        ).json;
+        return userData.graphql.user;
     } catch (e) {
-        throw e
+        throw e;
     }
 }
 
 function exit() {
-    return process.exit(0)
+    return process.exit(0);
 }
 
 module.exports = {
@@ -116,4 +118,4 @@ module.exports = {
     exit,
     prettyPrinter,
     downloadProfilePicture,
-}
+};
