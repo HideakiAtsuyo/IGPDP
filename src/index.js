@@ -23,7 +23,7 @@ async function main() {
         try {
             await downloadProfilePicture(avatarURL, output);
             prettyPrinter(
-                `The ${user.username}'s avatar has been downloaded at ${filename}!`,
+                `The ${user.username}'s avatar has been downloaded at ${output}!`,
                 'blue',
                 'italic'
             );
