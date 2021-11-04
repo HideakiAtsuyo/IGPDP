@@ -1,10 +1,6 @@
 # Dependencies
 
-There are a few dependencies for this project :
-- ``snekfetch``,
-- ``download-file``,
-- ``chalk``
-
+This project requires the ``chalk`` module to display beautiful text on the console.
 
 # Setup
 
