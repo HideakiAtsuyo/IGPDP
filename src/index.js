@@ -20,6 +20,7 @@ async function main() {
         const avatarURL = user.profile_pic_url_hd,
             output = `${user.username}_${user.id}.jpg`;
 
+
         try {
             await downloadProfilePicture(avatarURL, output);
             prettyPrinter(
@@ -31,12 +32,12 @@ async function main() {
         } catch (e) {
             throw e;
         }
+
     } else if (['-I', '--infos'].includes(opt)) {
         const is_private = user.is_private ? 'Yes' : 'No',
             is_verified = user.is_verified ? 'Yes' : 'No',
             is_joined_recently = user.is_joined_recently ? 'Yes' : 'No',
             is_business_account = user.is_business_account ? 'Yes' : 'No';
-
         prettyPrinter(
             `Username: ${user.username} || ID: ${user.id}\nFull name: ${
                 user.full_name || 'No full name found'
