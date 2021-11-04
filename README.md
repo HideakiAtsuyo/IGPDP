@@ -14,7 +14,7 @@ npm i --save # Will install all the dependencies from the package.json file.
 
 # Options
 
--P or --picture | to download the profile's avatar
+-P or --picture | to download the profile's avatar<br>
 -I or --infos | to gather the profile's information
 
 # Utilisation
