@@ -7,17 +7,10 @@ const https = require("https"),
  * @param {string} url The target URL to fetch
  * @param {object} headers The headers to send to the server
  */
-function httpGet(
-  url,
-  headers = {
-    "User-Agent":
-      "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1",
-  }
-) {
+function httpGet( url, headers = { "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1" }) {
   return new Promise(function (resolve, reject) {
     const data = [];
-    return https
-      .get(url, { headers }, function (response) {
+    return https.get(url, { headers }, function (response) {
         response.on("data", function (chunk) {
           data.push(chunk);
         });
@@ -35,8 +28,7 @@ function httpGet(
             })(),
           });
         });
-      })
-      .on("error", reject);
+      }).on("error", reject);
   });
 }
 
@@ -68,11 +60,9 @@ function argsChecker() {
  */
 function downloadProfilePicture(url, output) {
   return new Promise(function (resolve, reject) {
-    https
-      .get(url, function (data) {
+    https.get(url, function (data) {
         data.pipe(fs.createWriteStream(output)).on("close", resolve);
-      })
-      .on("error", reject);
+      }).on("error", reject);
   });
 }
 
